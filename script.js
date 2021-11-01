@@ -35,8 +35,24 @@ function generatePassword(passwordText){
     promptSpecial = window.prompt("Do you want to include special characters?(yes or no)");
 
   }
- 
-  while (promptLength > passString.length-1){
+  else if (promptLowercase != "no" || promptLowercase != "yes"){
+    window.alert("Answer must me yes or no. Try again");
+    promptLowercase = window.prompt("Do you want to include lowercase letters? (yes or no)");
+  }
+  else if (promptUppercase != "no" || promptUppercase != "yes"){
+    window.alert("Answer must me yes or no. Try again");
+    promptUppercase = window.prompt("Do you want to include uppercase letters? (yes or no)");
+  }   
+  else if (promptNumeric != "no" || promptNumeric != "yes"){
+    window.alert("Answer must me yes or no. Try again");
+    promptNumeric = window.prompt("Do you want to include numeric characters? (yes or no)");
+  }
+  else if (promptSpecial != "no" || promptSpecial != "yes"){
+    window.alert("Answer must me yes or no. Try again");
+    promptSpecial = window.prompt("Do you want to include special characters?(yes or no)");
+  }
+
+  while (promptLength > passString.length){
 
     if (promptSpecial === "yes"){
       
@@ -77,4 +93,4 @@ function writePassword() {
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
+generateBtn.addEventListener("click", writePassword);
